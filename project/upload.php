@@ -78,37 +78,6 @@ if (isset($_POST["submit"])) {
 
 
 
-        <!-- <form method="post">
-            <div class="form-row">
-                <div class="col-md-6">
-                    <label for="validationDefault01">judul Lagu</label>
-                    <input type="text" name="judul" class="form-control" id="validationDefault01" placeholder="Masukan judul music" value="" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="validationDefault02">Artis</label>
-                    <input type="text" name="artis" class="form-control" id="validationDefault02" placeholder="Masukan Nama Artis" value="" required>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-md-6 mb-3">
-                    <label for="validationDefault03">Descripsi</label>
-                    <input type="text" name="deskripsi" class="form-control" id="validationDefault03" placeholder="Masukan Descripsi" required>
-                </div>
-                <div class="col-md-3 mt-4 p-2">
-                    <div class="custom-file">
-                        <input type="file" name="thumbnail" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile">Upload Thumbnail</label>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-4 p-2">
-                    <div class="custom-file">
-                        <input type="file" name="music" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile">Upload Music</label>
-                    </div>
-                </div>
-            </div>
-            <button class="btn btn-primary tombol" type="submit">Submit form</button>
-        </form> -->
     </div>
 
 

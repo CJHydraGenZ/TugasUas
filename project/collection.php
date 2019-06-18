@@ -47,6 +47,11 @@ $music = query("SELECT * FROM tb_music");
 
 
                     <div class="card box a">
+                        <div class="aksi">
+                            <a href="update.php?id=<?= $lagu['id'];   ?>    ">Update</a>
+                            <a href="delete.php?id=<?= $lagu["id"]; ?>&music=<?= $lagu['music'];   ?>&img=<?= $lagu['thumbnail'];   ?>    " onclick="return confirm(' yakin ?')" ;>hapus</a>
+                        </div>
+
                         <img src="<?= baseUrl;   ?>assets/img/<?= $lagu['thumbnail'];   ?>      " class="card-img-top" alt="...">
                         <div class="card-body">
                             <a href="<?= baseUrl;   ?>project/play.php?id=<?= $lagu['id'];   ?>  "><?= $lagu['judul'];   ?> </a>

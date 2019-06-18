@@ -100,3 +100,71 @@ function uploadMusic()
     move_uploaded_file($tmpName, '../assets/music/' . $namaFile);
     return $namaFile;
 }
+
+
+
+function ubah($data)
+{
+    global $con;
+    $id = $data["id"];
+    // untuk mengambil $conn
+
+    //   ambil data tiap element dalam form
+    $judul = htmlspecialchars($data["judul"]);
+    $artis = htmlspecialchars($data["artis"]);
+    $deskripsi = htmlspecialchars($data["deskripsi"]);
+    // $thumbnail = htmlspecialchars($data["thumbnail"]);
+    // $music = htmlspecialchars($data["music"]);
+
+    $thumbnail = uploadThumbnail();
+    if (!$thumbnail) {
+        return false;
+    }
+    $music = uploadMusic();
+    if (!$music) {
+        return false;
+    }
+
+    //query insert data
+    $query = "UPDATE tb_music SET
+                judul = '$judul',
+            artis = '$artis',
+                deskripsi = '$deskripsi',
+                thumbnail = '$thumbnail',
+                music = '$music'
+                WHERE id = $id
+                ";
+
+    mysqli_query($con, $query);
+    return mysqli_affected_rows($con);
+}
+
+
+function hapus($id, $music, $img)
+{
+
+
+    global $con;
+    $myMusic =  "../assets/music/" . $music;
+    $myImg = "../assets/img/" . $img;
+
+    // var_dump($myMusic . $myImg);
+
+    // die;
+
+
+    // var_dump(unlink($myfile));
+    mysqli_query($con, "DELETE FROM tb_music WHERE id = $id");
+
+
+
+
+    if (!unlink($myMusic)) {
+        echo "Ada Error";
+    } else {
+        header("Location: collection.php");
+    }
+
+
+    return mysqli_affected_rows($con);
+}

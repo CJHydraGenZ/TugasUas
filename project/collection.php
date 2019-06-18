@@ -27,7 +27,7 @@ $music = query("SELECT * FROM tb_music");
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="<?= baseUrl;   ?>  ">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="<?= baseUrl;   ?>project ">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="">Collection</a>
                 <a class="nav-item nav-link" href="<?= baseUrl;   ?>project/upload.php  ">Upload</a>
                 <a class="nav-item nav-link" href="#">Sign In</a>

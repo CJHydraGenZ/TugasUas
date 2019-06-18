@@ -103,7 +103,7 @@ function uploadMusic()
 
 
 
-function ubah($data)
+function ubah($data, $img, $lagu)
 {
     global $con;
     $id = $data["id"];
@@ -115,6 +115,25 @@ function ubah($data)
     $deskripsi = htmlspecialchars($data["deskripsi"]);
     // $thumbnail = htmlspecialchars($data["thumbnail"]);
     // $music = htmlspecialchars($data["music"]);
+    // echo $img . $lagu;
+    // die;
+
+    $myMusic =  "../assets/music/" . $lagu;
+    $myImg = "../assets/img/" . $img;
+
+    if (!unlink($myMusic)) {
+        echo "Ada Error Music";
+    } else {
+        header("Location: collection.php");
+    }
+
+    if (!unlink($myImg)) {
+        echo "ada Error di img";
+    } else {
+        header("Location: collection.php");
+    }
+
+
 
     $thumbnail = uploadThumbnail();
     if (!$thumbnail) {
@@ -125,10 +144,11 @@ function ubah($data)
         return false;
     }
 
-    //query insert data
+
+    //query update data
     $query = "UPDATE tb_music SET
                 judul = '$judul',
-            artis = '$artis',
+                artis = '$artis',
                 deskripsi = '$deskripsi',
                 thumbnail = '$thumbnail',
                 music = '$music'
@@ -160,7 +180,13 @@ function hapus($id, $music, $img)
 
 
     if (!unlink($myMusic)) {
-        echo "Ada Error";
+        echo "Ada Error Music";
+    } else {
+        header("Location: collection.php");
+    }
+
+    if (!unlink($myImg)) {
+        echo "ada Error di img";
     } else {
         header("Location: collection.php");
     }

@@ -3,16 +3,21 @@ require_once '../config/config.php';
 require_once 'function.php';
 
 $id = $_GET["id"];
+$img = $_GET['thumb'];
+$lagu = $_GET['lagu'];
 
-// query data mahasiswa berdasarkan id
+// var_dump($thumb . $music);
+// die;
+
+// query data  berdasarkan id
 $msc = query("SELECT * FROM tb_music WHERE id = $id")[0];
-var_dump($msc);
+// var_dump($msc);
 
 
 
 if (isset($_POST["submit"])) {
     // cek apakah data berasil di tambahkan / tidak
-    if (ubah($_POST) > 0) {
+    if (ubah($_POST, $img, $lagu) > 0) {
         echo "
                     <script>
                         alert('data berasil Diubah');
@@ -77,10 +82,10 @@ if (isset($_POST["submit"])) {
             <input type="text" name="deskripsi" id="deskripsi" value="<?= $msc['deskripsi'];   ?>  ">
 
             <label for="thumbnail">thumbnail</label>
-            <input type="file" name="thumbnail" id="thumbnail" value="thumbnail">
+            <input type="file" name="thumbnail" id="thumbnail" value="<?= $msc['thumbnail'];   ?>  ">
 
             <label for="music">music</label>
-            <input type="file" name="music" id="music" value="music">
+            <input type="file" name="music" id="music" value="<?= $msc['music'];   ?>  ">
 
 
             <button type="submit" name="submit">Ubah</button>

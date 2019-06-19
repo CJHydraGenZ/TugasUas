@@ -13,7 +13,7 @@ function query($query)
 }
 function tambah($data)
 {
-    // untuk mengambil $conn
+    // untuk mengambil $con
     global $con;
     //   ambil data tiap element dalam form
     $judul = htmlspecialchars($data["judul"]);
@@ -107,7 +107,7 @@ function ubah($data, $img, $lagu)
 {
     global $con;
     $id = $data["id"];
-    // untuk mengambil $conn
+    // untuk mengambil $con
 
     //   ambil data tiap element dalam form
     $judul = htmlspecialchars($data["judul"]);
@@ -118,6 +118,8 @@ function ubah($data, $img, $lagu)
     // echo $img . $lagu;
     // die;
 
+
+    // menghapus  data yang ada di server dulu
     $myMusic =  "../assets/music/" . $lagu;
     $myImg = "../assets/img/" . $img;
 
@@ -134,7 +136,7 @@ function ubah($data, $img, $lagu)
     }
 
 
-
+    // upload lagi
     $thumbnail = uploadThumbnail();
     if (!$thumbnail) {
         return false;

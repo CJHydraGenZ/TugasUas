@@ -4,7 +4,6 @@ require_once 'function.php';
 
 
 $id = $_GET["id"];
-
 $music = $_GET['music'];
 $img = $_GET['img'];
 

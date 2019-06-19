@@ -27,7 +27,7 @@ $music = query("SELECT * FROM tb_music");
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="<?= baseUrl;   ?>project ">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="<?= baseUrl;   ?>project ">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="">Collection</a>
                 <a class="nav-item nav-link" href="<?= baseUrl;   ?>project/upload.php  ">Upload</a>
                 <a class="nav-item nav-link" href="#">Sign In</a>
@@ -40,7 +40,14 @@ $music = query("SELECT * FROM tb_music");
         <div class="row">
             <div class="col-md-2 Pkartu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum odio mollitia quae necessitatibus explicabo tempore ipsum laudantium dolorem nostrum, praesentium nobis accusantium fuga! Hic quod iste quo iure. Saepe, libero?</div>
             <div class="col-lg-10 kartu">
-                <div class="box sort"></div>
+                <div class="box sort">
+                    <div class="input-group mt-1">
+                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                        </div>
+                    </div>
+                </div>
 
                 <?php foreach ($music as $lagu) : ?>
 

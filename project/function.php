@@ -196,3 +196,17 @@ function hapus($id, $music, $img)
 
     return mysqli_affected_rows($con);
 }
+
+
+function cari($keyword)
+{
+    $query = "SELECT * FROM tb_music
+                WHERE
+                judul LIKE '%$keyword%' OR 
+                artis LIKE '%$keyword%' OR
+                deskripsi LIKE'%$keyword%' OR
+                thumbnail LIKE '%$keyword%' OR
+                music LIKE '%$keyword%'
+                ";
+    return query($query);
+}

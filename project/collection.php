@@ -1,8 +1,39 @@
 <?php
 require_once '../config/config.php';
 require_once 'function.php';
-$music = query("SELECT * FROM tb_music");
+
+// pagnation
+//CONFIG
+
+
+$jmlDataPerHalaman = 15;
+// $result = mysqli_query($con, "SELECT * FROM tb_music");
+$jumlahData = count(query('SELECT * FROM tb_music'));
+// var_dump($jumlahData);
+
+
+$jumlahHalaman = ceil($jumlahData / $jmlDataPerHalaman);
+// var_dump($jumlahHalaman);
+
+if (isset($_GET['p'])) {
+    $tampilanAktip = $_GET['p'];
+} else {
+    $tampilanAktip = 1;
+}
+
+$awalData = ($jmlDataPerHalaman * $tampilanAktip) - $jmlDataPerHalaman;
+
+
+$music = query("SELECT * FROM tb_music LIMIT $awalData,$jmlDataPerHalaman");
 // var_dump($music);
+
+
+
+if (isset($_POST["cari"])) {
+    $music = cari($_POST["keyword"]);
+}
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -38,15 +69,22 @@ $music = query("SELECT * FROM tb_music");
 
     <div class="container">
         <div class="row">
-            <div class="col-md-2 Pkartu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum odio mollitia quae necessitatibus explicabo tempore ipsum laudantium dolorem nostrum, praesentium nobis accusantium fuga! Hic quod iste quo iure. Saepe, libero?</div>
+            <div class="col-md-2 Pkartu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum odio mollitia quae necessitatibus explicabo tempore ipsum laudantium dolorem nostrum, praesentium nobis accusantium fuga! Hic quod iste quo iure. Saepe, libero?
+
+            </div>
             <div class="col-lg-10 kartu">
                 <div class="box sort">
-                    <div class="input-group mt-1">
-                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                    <form action="" method="post">
+
+
+                        <div class="input-group mt-1">
+                            <input type="text" name="keyword" class="form-control" placeholder="Masukan Pencarian Music anda?" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="submit" name="cari" id="button-addon2">Cari</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
+
                 </div>
 
                 <?php foreach ($music as $lagu) : ?>
@@ -55,7 +93,7 @@ $music = query("SELECT * FROM tb_music");
 
                     <div class="card box a">
                         <div class="aksi">
-                            <a href="update.php?id=<?= $lagu['id'];   ?>&thumb=<?= $lagu['thumbnail']; ?>&lagu=<?= $lagu['music'];   ?>        ">Update</a>
+                            <a href="update.php?id=<?= $lagu['id'];   ?>&thumb=<?= $lagu['thumbnail']; ?>&lagu=<?= $lagu['music'];   ?>        ">Ubah</a>
                             <a href="delete.php?id=<?= $lagu["id"]; ?>&music=<?= $lagu['music'];   ?>&img=<?= $lagu['thumbnail'];   ?>    " onclick="return confirm(' yakin ?')" ;>hapus</a>
                         </div>
 
@@ -72,9 +110,50 @@ $music = query("SELECT * FROM tb_music");
                         </div>
                     </div>
                 <?php endforeach ?>
+                <!-- navigasi -->
+
+                <div class="box sort ilang">
+
+
+
+                    <div class="ketengah">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <?php if ($tampilanAktip > 1) : ?>
+                                        <a href="?p=<?= $tampilanAktip - 1;   ?>  " class="page-link" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    <?php endif ?>
+                                </li>
+                                <?php for ($i = 1; $i <= $jumlahHalaman; $i++) :  ?>
+                                    <?php if ($i == $tampilanAktip) : ?>
+                                        <li class="page-item active"><a class="page-link" href="?p=<?= $i;  ?>"><?= $i;  ?></a></li>
+                                    <?php else : ?>
+                                        <li class="page-item"><a class="page-link" href="?p=<?= $i;  ?>"><?= $i;  ?></a></li>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                                <li class="page-item">
+                                    <?php if ($tampilanAktip < $jumlahHalaman) : ?>
+
+                                        <a class="page-link" href="?p=<?= $tampilanAktip + 1;   ?>  " aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    <?php endif ?>
+
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+
+                </div>
+
+
 
 
             </div>
+
         </div>
     </div>
 

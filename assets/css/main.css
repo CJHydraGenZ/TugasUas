@@ -9,7 +9,7 @@
     width: 100%;
     display: grid;
     grid-auto-flow: dense;
-    grid-template: "1fr 1fr 1fr 1fr 1fr"40px "1fr 1fr 1fr 1fr 1fr"auto "1fr 1fr 1fr 1fr 1fr"auto;
+    grid-template: "1fr 1fr 1fr 1fr 1fr"auto "1fr 1fr 1fr 1fr 1fr"auto "1fr 1fr 1fr 1fr 1fr"auto;
 
     grid-gap: 10px;
     border: 1px solid rgb(218, 218, 218);
@@ -26,7 +26,9 @@
 
 }
 
-
+.kartu .box.ilang {
+    box-shadow: none;
+}
 
 
 .kartu .box.sort {

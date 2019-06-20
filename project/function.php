@@ -33,7 +33,7 @@ function tambah($data)
     //query insert data
     $query = "INSERT INTO tb_music
         VALUES
-        ('','$judul','$artis','$deskripsi','$thumbnail','$music')
+        ('','$judul','$artis','$deskripsi','$thumbnail','$music','')
 ";
     mysqli_query($con, $query);
     return mysqli_affected_rows($con);
@@ -61,7 +61,7 @@ function uploadThumbnail()
         </script>";
     }
     // cek jika ukuran terlalu besar
-    if ($ukuranFile > 10000000) {
+    if ($ukuranFile > 20000000) {
         echo "<script>
         alert('ukuran gambar terlalu besar');
         </script>";
@@ -91,7 +91,7 @@ function uploadMusic()
         alert('yang anda upload buka Music!');
         </script>";
     }
-    if ($ukuranFile > 20000000) {
+    if ($ukuranFile > 200000000) {
         echo "<script>
         alert('ukuran Music terlalu besar');
         </script>";
@@ -154,6 +154,8 @@ function ubah($data, $img, $lagu)
                 deskripsi = '$deskripsi',
                 thumbnail = '$thumbnail',
                 music = '$music'
+               
+            
                 WHERE id = $id
                 ";
 

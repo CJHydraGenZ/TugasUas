@@ -4,8 +4,6 @@ require_once 'function.php';
 
 // pagnation
 //CONFIG
-
-
 $jmlDataPerHalaman = 15;
 // $result = mysqli_query($con, "SELECT * FROM tb_music");
 $jumlahData = count(query('SELECT * FROM tb_music'));
@@ -75,8 +73,6 @@ if (isset($_POST["cari"])) {
             <div class="col-lg-10 kartu">
                 <div class="box sort">
                     <form action="" method="post">
-
-
                         <div class="input-group mt-1">
                             <input type="text" name="keyword" class="form-control" placeholder="Masukan Pencarian Music anda?" aria-label="Recipient's username" aria-describedby="button-addon2">
                             <div class="input-group-append">
@@ -104,7 +100,7 @@ if (isset($_POST["cari"])) {
                             <div class="row content">
                                 <div class="col artis"><?= $lagu['artis'];   ?> </div>
                                 <div class="col like">3123</div>
-                                <div class="col views">d</div>
+                                <div class="col views"><?= $lagu['visitor'];   ?></div>
 
                             </div>
                         </div>

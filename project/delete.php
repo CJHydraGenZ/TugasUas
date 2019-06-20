@@ -13,6 +13,8 @@ if (hapus($id, $music, $img) > 0) {
         alert('data berasil hapus');
         document.location.href = 'collection.php';
     </script>
+
+    
 ";
 } else {
     echo "

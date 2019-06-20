@@ -5,8 +5,17 @@ $id = $_GET['id'];
 // var_dump($id);
 // query data mahasiswa berdasarkan id
 $Pmusic = query("SELECT * FROM tb_music WHERE id = $id")[0];
-// var_dump($Pmusic);
-// var_dump($Pmusic['music']);
+
+
+//visitor
+$current_count =  $Pmusic['visitor'];
+$new_count = $current_count + 1;
+mysqli_query($con, "UPDATE tb_music SET visitor = '" . $new_count . "'WHERE id = $id");
+
+// echo "vistor = " . $new_count;
+
+
+
 ?>
 
 <!doctype html>

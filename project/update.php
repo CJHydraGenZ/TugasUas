@@ -19,18 +19,18 @@ if (isset($_POST["submit"])) {
     // cek apakah data berasil di tambahkan / tidak
     if (ubah($_POST, $img, $lagu) > 0) {
         echo "
-                    <script>
-                        alert('data berasil Diubah');
-                        document.location.href = 'collection.php';
-                    </script>
-                ";
+        <script>
+            alert('data berasil diUbah');
+            document.location.href = 'collection.php';
+        </script>
+    ";
     } else {
         echo "
-                <script>
-                      alert('data gagal di Diubah');
-                      document.location.href = 'update.php'
-                 </script>
-                ";
+    <script>
+          alert('data gagal di Ubah');
+          document.location.href = 'upload.php'
+     </script>
+    ";
     }
 }
 ?>

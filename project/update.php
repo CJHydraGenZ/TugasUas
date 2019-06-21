@@ -2,6 +2,8 @@
 require_once '../config/config.php';
 require_once 'function.php';
 
+session_start();
+
 $id = $_GET["id"];
 $img = $_GET['thumb'];
 $lagu = $_GET['lagu'];
@@ -18,17 +20,19 @@ $msc = query("SELECT * FROM tb_music WHERE id = $id")[0];
 if (isset($_POST["submit"])) {
     // cek apakah data berasil di tambahkan / tidak
     if (ubah($_POST, $img, $lagu) > 0) {
+        $_SESSION['pesan'] = 'berasil Ubah';
         echo "
         <script>
-            alert('data berasil diUbah');
+         
             document.location.href = 'collection.php';
         </script>
     ";
     } else {
+        $_SESSION['pesan'] = 'gagal di Ubah';
         echo "
     <script>
-          alert('data gagal di Ubah');
-          document.location.href = 'upload.php'
+         
+          document.location.href = 'upload.php';
      </script>
     ";
     }

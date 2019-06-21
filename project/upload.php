@@ -1,20 +1,26 @@
 <?php
 require_once '../config/config.php';
 require_once 'function.php';
+
+session_start();
+
 if (isset($_POST["submit"])) {
     // cek apakah data berasil di tambahkan / tidak
     if (tambah($_POST) > 0) {
+        $_SESSION['pesan'] = 'berasil tambah';
         echo "
                     <script>
-                        alert('data berasil ditambahkan');
+                     
                         document.location.href = 'collection.php';
                     </script>
                 ";
     } else {
+        $_SESSION['pesan'] = 'gagal di tambah';
         echo "
+        
                 <script>
-                      alert('data gagal di tambahkan');
-                      document.location.href = 'upload.php'
+                      
+                      document.location.href = 'upload.php';
                  </script>
                 ";
     }

@@ -1,6 +1,7 @@
 <?php
 require_once '../config/config.php';
 $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
 function query($query)
 {
     global $con;
@@ -38,6 +39,8 @@ function tambah($data)
     mysqli_query($con, $query);
     return mysqli_affected_rows($con);
 }
+
+
 function uploadThumbnail()
 {
     $namaFile = basename($_FILES['thumbnail']['name']);

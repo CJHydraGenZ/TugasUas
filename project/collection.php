@@ -2,6 +2,11 @@
 require_once '../config/config.php';
 require_once 'function.php';
 
+session_start();
+
+
+
+
 // pagnation
 //CONFIG
 $jmlDataPerHalaman = 15;
@@ -44,7 +49,7 @@ if (isset($_POST["cari"])) {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= baseUrl;   ?>assets/css/main.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <title>Hello, world!</title>
 </head>
 
@@ -89,8 +94,8 @@ if (isset($_POST["cari"])) {
 
                     <div class="card box a">
                         <div class="aksi">
-                            <a href="update.php?id=<?= $lagu['id'];   ?>&thumb=<?= $lagu['thumbnail']; ?>&lagu=<?= $lagu['music'];   ?>        ">Ubah</a>
-                            <a href="delete.php?id=<?= $lagu["id"]; ?>&music=<?= $lagu['music'];   ?>&img=<?= $lagu['thumbnail'];   ?>    " onclick="return confirm(' yakin ?')" ;>hapus</a>
+                            <a class="tbn-ubah" href="update.php?id=<?= $lagu['id'];   ?>&thumb=<?= $lagu['thumbnail']; ?>&lagu=<?= $lagu['music'];   ?>        ">Ubah</a>
+                            <a class="tbn-hapus" href="delete.php?id=<?= $lagu["id"]; ?>&music=<?= $lagu['music'];   ?>&img=<?= $lagu['thumbnail'];   ?>    ">hapus</a>
                         </div>
 
                         <img src="<?= baseUrl;   ?>assets/img/<?= $lagu['thumbnail'];   ?>      " class="card-img-top" alt="...">
@@ -99,7 +104,7 @@ if (isset($_POST["cari"])) {
                             <p><?= $lagu['deskripsi'];   ?> </p>
                             <div class="row content">
                                 <div class="col artis"><?= $lagu['artis'];   ?> </div>
-                                <div class="col like">3123</div>
+
                                 <div class="col views"><?= $lagu['visitor'];   ?></div>
 
                             </div>
@@ -152,6 +157,20 @@ if (isset($_POST["cari"])) {
 
         </div>
     </div>
+
+
+    <?php
+    //        menampilkan pesan jika ada pesan
+    if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
+        echo '<div class="pesan" data-pesan="' . $_SESSION['pesan'] . '">' . $_SESSION['pesan'] . '</div>';
+    }
+    //        mengatur session pesan menjadi kosong
+    $_SESSION['pesan'] = '';
+    ?>
+
+
+
+
 
 
     <!-- Optional JavaScript -->

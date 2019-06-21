@@ -12,7 +12,6 @@ $current_count =  $Pmusic['visitor'];
 $new_count = $current_count + 1;
 mysqli_query($con, "UPDATE tb_music SET visitor = '" . $new_count . "'WHERE id = $id");
 
-// echo "vistor = " . $new_count;
 
 
 
@@ -28,6 +27,7 @@ mysqli_query($con, "UPDATE tb_music SET visitor = '" . $new_count . "'WHERE id =
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <link rel="stylesheet" href="<?= baseUrl;   ?>assets/css/main.css">
 
     <title>Hello, world!</title>
@@ -40,6 +40,9 @@ mysqli_query($con, "UPDATE tb_music SET visitor = '" . $new_count . "'WHERE id =
 
         <div class="row pent">
             <div class="col-md-6">
+
+
+
 
             </div>
             <div class="col col-lg-2">

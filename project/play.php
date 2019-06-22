@@ -1,5 +1,5 @@
 <?php
-require_once 'function.php';
+require_once '../config/function.php';
 require_once '../config/config.php';
 $id = $_GET['id'];
 // var_dump($id);

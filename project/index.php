@@ -1,7 +1,7 @@
 <?php
 require_once '../config/config.php';
 // require_once 'project/function.php';
-require_once 'function.php';
+require_once '../config/function.php';
 
 $result = query("SELECT * FROM tb_music");
 // var_dump($result['visitor']);
@@ -66,17 +66,17 @@ foreach ($result as $getGambar) {;
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Audio Collection</a>
+        <a class="navbar-brand" href="<?= baseUrl;   ?>  ">Audio Collection</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
 
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="<?= baseUrl;   ?>project/index.php  ">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="<?= baseUrl;   ?>project/collection.php  ">Collection</a>
                 <a class="nav-item nav-link" href="<?= baseUrl;   ?>project/upload.php">Upload</a>
-                <a class="nav-item nav-link" href="#">Sign In</a>
+
             </div>
         </div>
     </nav>

@@ -1,6 +1,6 @@
 <?php
 require_once '../config/config.php';
-require_once 'function.php';
+require_once '../config/function.php';
 
 session_start();
 
@@ -55,7 +55,7 @@ if (isset($_POST["cari"])) {
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Audio Collection</a>
+        <a class="navbar-brand" href="<?= baseUrl;   ?>  ">Audio Collection</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -64,7 +64,7 @@ if (isset($_POST["cari"])) {
                 <a class="nav-item nav-link" href="<?= baseUrl;   ?>project ">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="">Collection</a>
                 <a class="nav-item nav-link" href="<?= baseUrl;   ?>project/upload.php  ">Upload</a>
-                <a class="nav-item nav-link" href="#">Sign In</a>
+
             </div>
         </div>
     </nav>

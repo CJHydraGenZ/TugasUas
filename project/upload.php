@@ -1,6 +1,6 @@
 <?php
 require_once '../config/config.php';
-require_once 'function.php';
+require_once '../config/function.php';
 
 session_start();
 
@@ -53,7 +53,7 @@ if (isset($_POST["submit"])) {
                 <a class="nav-item nav-link active" href="<?= baseUrl;   ?>project  ">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="<?= baseUrl;   ?>project/collection.php  ">Collection</a>
                 <a class="nav-item nav-link" href="<?= baseUrl;   ?>project/upload.php">Upload</a>
-                <a class="nav-item nav-link" href="#">Sign In</a>
+                >
             </div>
         </div>
     </nav>

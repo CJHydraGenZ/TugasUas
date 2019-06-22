@@ -40,8 +40,12 @@ foreach ($result as $getData) {
 
 }
 
-// var_dump($arr);
-
+$arrG = array();
+foreach ($result as $getGambar) {;
+    // var_dump($getGambar['thumbnail']);
+    array_push($arrG,  $getGambar['thumbnail']);
+}
+// var_dump($arrG);
 
 ?>
 
@@ -82,7 +86,7 @@ foreach ($result as $getData) {
         <div class="carousel-inner">
 
             <div class="carousel-item active size">
-                <img class="Gimg" src="<?= baseUrl;   ?>assets/img/ " class="d-block w-100" alt="...">
+                <img class="Gimg" src="<?= baseUrl;   ?>assets/img/<?= $arrG[0];   ?>   " class="d-block w-100" alt="...">
             </div>
 
             <?php foreach ($result as $gambar) : ?>

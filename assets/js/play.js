@@ -1,7 +1,3 @@
-// var baseUrlMusic = 'http://localhost:8080/tugasUas/assets/music/';
-// var dataMusic = $('#music').data('music');
-// console.log(dataMusic);
-
 var btn = document.getElementById('btn');
 var btnStop = document.getElementById('btnStop');
 // var durationE = document.getElementById('duration');

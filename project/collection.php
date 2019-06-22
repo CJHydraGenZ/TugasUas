@@ -79,9 +79,9 @@ if (isset($_POST["cari"])) {
                 <div class="box sort">
                     <form action="" method="post">
                         <div class="input-group mt-1">
-                            <input type="text" name="keyword" class="form-control" placeholder="Masukan Pencarian Music anda?" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <input type="text" name="keyword" class="form-control" placeholder="Masukan Pencarian Music anda?" aria-label="Recipient's username" aria-describedby="button-addon2" id="keyword">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="submit" name="cari" id="button-addon2">Cari</button>
+                                <button class="btn btn-outline-secondary" type="submit" name="cari" id="tombol-cari">Cari</button>
                             </div>
                         </div>
                     </form>

@@ -1,28 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
 
-.navbar {}
 
-.nav-item.nav-link {
-    color: white !important;
-}
 
-.nav-item.nav-link:nth-child(1) {
+
+
+.aktip {
     margin-left: 10px;
-    background-color: rgb(0, 0, 94);
+    background-color: rgb(255, 255, 255);
     border-radius: 4px;
+    color: black;
 }
 
-.nav-item.nav-link:nth-child(2) {
-    margin-left: 10px;
-    background-color: rgb(116, 116, 116);
-    border-radius: 4px;
-}
 
-.nav-item.nav-link:nth-child(3) {
-    margin-left: 10px;
-    background-color: rgb(58, 184, 79);
-    border-radius: 4px;
-}
 
 .Pkartu {
     border-top: 1px solid rgb(218, 218, 218);
@@ -165,43 +154,6 @@ aaa */
     /* background-size: cover; */
 }
 
-.progress {
-    padding: 40px;
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    box-sizing: border-box;
-}
-
-
-.pie,
-.pie1 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.char1 {
-    /* width: 100% !important;
-    height: 100% !important; */
-
-
-}
-
-
-
-.iconT {
-    overflow: hidden;
-    width: 100%;
-    height: 200px;
-}
-
-.fas,
-.fab {
-    font-size: 100px;
-}
-
 .content {
     width: 100%;
     height: 100%;
@@ -220,6 +172,11 @@ footer {
     background: rgb(170, 170, 170);
 }
 
+.fas,
+.fab {
+    font-size: 50px;
+}
+
 .copyright {
     position: absolute;
     text-align: center;
@@ -229,4 +186,140 @@ footer {
     /* background: rgb(44, 44, 44); */
 
     color: white;
+}
+
+/* dekstop */
+@media (min-width: 992px) {
+    .navbar {
+        height: 80px;
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .nav-item.nav-link:nth-child(1) {
+        margin-left: 10px;
+        background-color: rgb(0, 0, 94);
+        border-radius: 4px;
+    }
+
+    .nav-item.nav-link:nth-child(2) {
+        margin-left: 10px;
+        background-color: rgb(116, 116, 116);
+        border-radius: 4px;
+    }
+
+    .nav-item.nav-link:nth-child(3) {
+        margin-left: 10px;
+        background-color: rgb(58, 184, 79);
+        border-radius: 4px;
+    }
+
+    .progress {
+        padding: 40px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .pie,
+    .pie1 {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .iconT {
+        overflow: hidden;
+        width: 100%;
+        height: 200px;
+    }
+
+    .fas,
+    .fab {
+        font-size: 100px;
+    }
+}
+
+/* tablet */
+@media (min-width: 768px) {
+
+
+    .nav-item.nav-link {
+        height: 50px;
+        width: 100px;
+        color: white !important;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    .progress {
+        display: block !important;
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+}
+
+@media (min-width: 576px) {
+    .progress {
+        display: block !important;
+        width: 100%;
+        height: 100%;
+    }
+
+    .iconT {
+        overflow: hidden;
+        width: 100%;
+
+    }
+}
+
+@media (max-width: 575px) {
+    .progress {
+        display: block !important;
+        width: 100%;
+        height: 100%;
+    }
+
+    .iconT {
+        overflow: hidden;
+        width: 100%;
+
+    }
+}
+
+/* untuk hp */
+@media (max-width: 294px) {
+    .navbar {
+
+        height: 0;
+    }
+
+    .nav-item.nav-link {
+        width: 0;
+        height: 0;
+    }
+
+    .progress {
+
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .iconT {
+        overflow: hidden;
+        width: 100%;
+
+    }
+
+    .fas,
+    .fab {
+        font-size: 20px;
+    }
 }

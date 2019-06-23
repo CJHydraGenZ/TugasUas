@@ -150,14 +150,26 @@ foreach ($result as $getGambar) {;
                 <div class="col">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste ut sit quaerat praesentium, nisi soluta earum ad saepe autem. Quos atque ad quae error illo magni doloremque rerum consequatur debitis.
                 </div>
-                <div class="col">
-                    <form id="ajax" action="" method="post">
+                <div class="col ukuran">
+                    <!-- <form id="ajax" action="" method="post">
                         <label for="pesan">pesan</label>
                         <input type="text" name="pesan" id="pesan">
                         <label for="kesan">kesan</label>
                         <input type="text" name="kesan" id="kesan">
 
                         <button type="submit" name="submit">Kirim</button>
+                    </form> -->
+                    <form id="ajax" action="" method="post" class="form">
+
+                        <div class="form-group kirim">
+                            <label for="pesan">Pesan Anda Untuk Web ini</label>
+                            <textarea name="pesan" class="form-control" id="pesan" rows="2"></textarea>
+                        </div>
+                        <div class="form-group kirim">
+                            <label for="kesan">Keran Anda Untuk Web ini</label>
+                            <textarea name="kesan" class="form-control" id="kesan" rows="2"></textarea>
+                        </div>
+                        <button type="submit" name="submit" class="btn btn-primary kirim">Kirim</button>
                     </form>
                 </div>
             </div>

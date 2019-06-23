@@ -20,7 +20,7 @@ $msc = query("SELECT * FROM tb_music WHERE id = $id")[0];
 if (isset($_POST["submit"])) {
     // cek apakah data berasil di tambahkan / tidak
     if (ubah($_POST, $img, $lagu) > 0) {
-        $_SESSION['pesan'] = 'berasil Ubah';
+        $_SESSION['pesan'] = 'berhasil Ubah';
         echo "
         <script>
          

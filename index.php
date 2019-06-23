@@ -19,51 +19,31 @@ $Mes_rows = mysqli_num_rows($Mses);
 // $Rsum = mysqli_query($con, "SELECT SUM(visitor) FROM tb_music WHERE id");
 $SUM = query("SELECT SUM(visitor) FROM tb_music WHERE id")[0];
 
-// var_dump($SUM['SUM(visitor)']);
 
-// $result = array();
-//     while($row = mysqli_fetch_array($res)) {
-//         array_push($result, array('id'=>$row[0], 'nim'=>$row[1], 'nama'=>$row[2], 'alamat'=>$row[3],
-//         'tgl_lahir'=>$row[4], 'email'=>$row[5], 'hp'=>$row[6], 'photo'=>$row[7]));
-//     }
-
-// $filename = '../assets/music/PewDiePie - Congratulations (TIF EDM Remix).mp3';
-// $filename1 = '../assets/music/Nightcore - Stay The Night - (Lyrics).mp3';
-// // echo $filename . ': ' . filesize($filename) . ' bytes';
-// echo filesize($filename) + filesize($filename1) . 'bytye';
 $arr = array();
+$arrThumb = array();
 foreach ($result as $getData) {
+
+    // var_dump($getData);
     $filename = 'assets/music/' . $getData['music'];
+    $filename1 = 'assets/img/' . $getData['thumbnail'];
     // var_dump($filename);
     $sise = filesize($filename);
-    // var_dump($sise);
-    // $to = FileSizeConvert($sise);
-    // var_dump($to);
+    $sise1 = filesize($filename1);
+
 
     array_push($arr, $sise);
-    // echo array_sum($a++);
-
-
+    array_push($arrThumb, $sise1);
 }
 
+// var_dump($arrThumb);
 $arrG = array();
 foreach ($result as $getGambar) {;
     // var_dump($getGambar['thumbnail']);
     array_push($arrG,  $getGambar['thumbnail']);
 }
-// var_dump($arrG);
 
-
-
-
-
-
-
-
-
-// var_dump($_SESSION['pesan']);
-
-
+// echo json_encode($arrThumb, true);
 
 
 ?>
@@ -93,7 +73,7 @@ foreach ($result as $getGambar) {;
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
 
-                <a class="nav-item nav-link active" href="<?= baseUrl;   ?>">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="<?= baseUrl;   ?>">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="<?= baseUrl;   ?>project/collection.php  ">Collection</a>
                 <a class="nav-item nav-link" href="<?= baseUrl;   ?>project/upload.php">Upload</a>
 
@@ -133,6 +113,7 @@ foreach ($result as $getGambar) {;
     <div class="progress">
         <div class="row pie">
             <input class="mes" type="hidden" data-mes="<?= $Mes_rows;   ?>  ">
+            <input class="sizeG" type="hidden" data-gambar="<?= json_encode($arrThumb, true)   ?>">
             <div class="col-4 mt-3 numrows" data-num_rows="<?= $Num_rows;  ?>  "> <canvas class="char" id="grapik"></canvas></div>
             <div class="col-4 mt-3 sumV" data-sumvisitor="<?= $SUM['SUM(visitor)'];   ?>  "><canvas class="char" id="grapik1"></canvas></div>
             <div class="col-4 mt-3 total" data-totalfile="<?= json_encode($arr, true) ?>"><canvas class="char" id="grapik2"></canvas></div>
@@ -170,7 +151,7 @@ foreach ($result as $getGambar) {;
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste ut sit quaerat praesentium, nisi soluta earum ad saepe autem. Quos atque ad quae error illo magni doloremque rerum consequatur debitis.
                 </div>
                 <div class="col">
-                    <form action="project/message.php" method="post">
+                    <form id="ajax" action="" method="post">
                         <label for="pesan">pesan</label>
                         <input type="text" name="pesan" id="pesan">
                         <label for="kesan">kesan</label>
@@ -186,20 +167,14 @@ foreach ($result as $getGambar) {;
         </footer>
     </div>
 
-    <?php
-    //        menampilkan pesan jika ada pesan
-    if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
-        echo '<div class="pesan" data-pesan="' . $_SESSION['pesan'] . '"></div>';
-    }
-    //        mengatur session pesan menjadi kosong
-    $_SESSION['pesan'] = '';
-    ?>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
-    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <!-- <script src="assets/js/jquery-3.4.1.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="assets/js/patikel/particles.js-master/particles.js"></script>

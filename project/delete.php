@@ -9,7 +9,7 @@ $music = $_GET['music'];
 $img = $_GET['img'];
 
 if (hapus($id, $music, $img) > 0) {
-    $_SESSION['pesan'] = 'berasil di hapus';
+    $_SESSION['pesan'] = 'berhasil di hapus';
     echo "
     <script>
        

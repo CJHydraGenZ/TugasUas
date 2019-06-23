@@ -258,8 +258,8 @@ function cari($keyword)
 function kirimP($data)
 {
     global $con;
-
-
+    // var_dump($data);
+    // die;
 
     $pesan = htmlspecialchars($data["pesan"]);
     $kesan = htmlspecialchars($data["kesan"]);

@@ -7,7 +7,7 @@ session_start();
 if (isset($_POST["submit"])) {
     // cek apakah data berasil di tambahkan / tidak
     if (tambah($_POST) > 0) {
-        $_SESSION['pesan'] = 'berasil tambah';
+        $_SESSION['pesan'] = 'berhasil tambah';
         echo "
                     <script>
                      

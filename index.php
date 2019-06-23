@@ -163,13 +163,13 @@ foreach ($result as $getGambar) {;
 
                         <div class="form-group kirim">
                             <label for="pesan">Pesan Anda Untuk Web ini</label>
-                            <textarea name="pesan" class="form-control" id="pesan" rows="2"></textarea>
+                            <textarea name="pesan" class="form-control bg-dark" id="pesan" rows="2"></textarea>
                         </div>
                         <div class="form-group kirim">
                             <label for="kesan">Keran Anda Untuk Web ini</label>
-                            <textarea name="kesan" class="form-control" id="kesan" rows="2"></textarea>
+                            <textarea name="kesan" class="form-control bg-dark" id="kesan" rows="2"></textarea>
                         </div>
-                        <button type="submit" name="submit" class="btn btn-primary kirim">Kirim</button>
+                        <button type="submit" name="submit" class="btn btn-dark kirim">Kirim</button>
                     </form>
                 </div>
             </div>

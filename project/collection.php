@@ -71,7 +71,7 @@ if (isset($_POST["cari"])) {
     </nav>
 
 
-    <div class="container">
+    <div class="container collection">
         <div class="row">
             <div class="col-md-2 Pkartu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum odio mollitia quae necessitatibus explicabo tempore ipsum laudantium dolorem nostrum, praesentium nobis accusantium fuga! Hic quod iste quo iure. Saepe, libero?
 
@@ -120,7 +120,7 @@ if (isset($_POST["cari"])) {
 
                     <div class="ketengah">
                         <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
+                            <ul class="pagination justify-content-center bg-dark">
                                 <li class="page-item">
                                     <?php if ($tampilanAktip > 1) : ?>
                                         <a href="?p=<?= $tampilanAktip - 1;   ?>  " class="page-link" aria-label="Previous">

@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
 
 
-
+body {
+    background-color: rgb(228, 228, 228) !important;
+}
 
 
 .aktip {
@@ -203,6 +205,10 @@ footer {
     font-size: 50px;
 }
 
+/* .container.collection {
+    background-color: aliceblue;
+} */
+
 .copyright {
     margin-top: 100px;
     position: absolute;
@@ -214,6 +220,14 @@ footer {
 
     color: white;
 }
+
+
+/* .page {
+    background-color: rgb(228, 228, 228) !important;
+    border: none !important;
+    outline: none !important;
+} */
+
 
 /* dekstop */
 @media (min-width: 992px) {

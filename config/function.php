@@ -254,3 +254,23 @@ function cari($keyword)
 //     }
 //     return $result;
 // }
+
+function kirimP($data)
+{
+    global $con;
+
+
+
+    $pesan = htmlspecialchars($data["pesan"]);
+    $kesan = htmlspecialchars($data["kesan"]);
+
+
+
+    //query insert data
+    $query = "INSERT INTO tb_message
+        VALUES
+        ('','$pesan','$kesan')
+";
+    mysqli_query($con, $query);
+    return mysqli_affected_rows($con);
+}

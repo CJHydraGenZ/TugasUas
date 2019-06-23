@@ -76,6 +76,14 @@
 }
 
 
+.about {
+    padding: 10px;
+    width: 100%;
+    height: 300px;
+    background: rgb(170, 170, 170);
+}
+
+
 
 #canvas {
     box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4);
@@ -132,8 +140,10 @@ aaa */
 }
 
 .progress {
+    padding: 40px;
+    display: block;
     width: 100%;
-    height: 600px;
+    height: 100%;
     position: relative;
     box-sizing: border-box;
 }
@@ -157,9 +167,40 @@ aaa */
 
 .iconT {
     overflow: hidden;
+    width: 100%;
+    height: 200px;
 }
 
 .fas,
 .fab {
     font-size: 100px;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.isi {
+    box-sizing: border-box;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: rgb(170, 170, 170);
+}
+
+.copyright {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    /* background: rgb(44, 44, 44); */
+
+    color: white;
 }

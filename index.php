@@ -1,15 +1,21 @@
 <?php
+
 require_once 'config/config.php';
 // require_once 'project/function.php';
 require_once 'config/function.php';
+session_start();
+
 
 $result = query("SELECT * FROM tb_music");
 // var_dump($result['visitor']);
 
 $Res = mysqli_query($con, "SELECT * FROM tb_music");
+$Mses = mysqli_query($con, "SELECT * FROM tb_message");
 $Num_rows = mysqli_num_rows($Res);
+$Mes_rows = mysqli_num_rows($Mses);
 // var_dump($Num_rows);
-
+// $arrViews = array($Num_rows, $Mes_rows);
+// var_dump($arrViews);
 // $Rsum = mysqli_query($con, "SELECT SUM(visitor) FROM tb_music WHERE id");
 $SUM = query("SELECT SUM(visitor) FROM tb_music WHERE id")[0];
 
@@ -47,6 +53,19 @@ foreach ($result as $getGambar) {;
 }
 // var_dump($arrG);
 
+
+
+
+
+
+
+
+
+// var_dump($_SESSION['pesan']);
+
+
+
+
 ?>
 
 <!doctype html>
@@ -66,7 +85,7 @@ foreach ($result as $getGambar) {;
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="<?= baseUrl;   ?>  ">Audio Collection</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -84,6 +103,7 @@ foreach ($result as $getGambar) {;
 
 
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+
         <div class="carousel-inner">
 
             <div class="carousel-item active size">
@@ -102,24 +122,28 @@ foreach ($result as $getGambar) {;
         </div>
 
     </div>
+    <div class="about text-center">
+        <h1>About</h1>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio, dignissimos magnam quam iste repudiandae nulla quidem nostrum eius iure atque. Accusantium sint quos quibusdam placeat explicabo illum sapiente dolorum hic.
+        </p>
 
+    </div>
 
     <div class="progress">
         <div class="row pie">
-            <div class="col-4 mt-3 numrows" data-num_rows="<?= $Num_rows;   ?>  "> <canvas class="char" id="grapik"></canvas></div>
+            <input class="mes" type="hidden" data-mes="<?= $Mes_rows;   ?>  ">
+            <div class="col-4 mt-3 numrows" data-num_rows="<?= $Num_rows;  ?>  "> <canvas class="char" id="grapik"></canvas></div>
             <div class="col-4 mt-3 sumV" data-sumvisitor="<?= $SUM['SUM(visitor)'];   ?>  "><canvas class="char" id="grapik1"></canvas></div>
             <div class="col-4 mt-3 total" data-totalfile="<?= json_encode($arr, true) ?>"><canvas class="char" id="grapik2"></canvas></div>
         </div>
         <div class="row pie1">
             <div class="col-lg mt-3"><canvas class="char1" id="grapik3"></canvas></div>
-
         </div>
-
-
     </div>
     <h1 class="text-center">Collection</h1>
     <div class="iconT">
-        <div class="row">
+        <div class="row text-center">
 
             <div class="col-4">
                 <i class="fas fa-play-circle"></i>
@@ -135,15 +159,47 @@ foreach ($result as $getGambar) {;
 
 
 
+    <div class="content">
+
+        <div class="isi" id="particles-js"></div>
 
 
-    <div id="particles-js"></div>
+        <footer class="isi">
+            <div class="row footer">
+                <div class="col">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste ut sit quaerat praesentium, nisi soluta earum ad saepe autem. Quos atque ad quae error illo magni doloremque rerum consequatur debitis.
+                </div>
+                <div class="col">
+                    <form action="project/message.php" method="post">
+                        <label for="pesan">pesan</label>
+                        <input type="text" name="pesan" id="pesan">
+                        <label for="kesan">kesan</label>
+                        <input type="text" name="kesan" id="kesan">
+
+                        <button type="submit" name="submit">Kirim</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright bg-dark">
+                copyright ©
+            </div>
+        </footer>
+    </div>
+
+    <?php
+    //        menampilkan pesan jika ada pesan
+    if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
+        echo '<div class="pesan" data-pesan="' . $_SESSION['pesan'] . '"></div>';
+    }
+    //        mengatur session pesan menjadi kosong
+    $_SESSION['pesan'] = '';
+    ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
     <script src="assets/js/jquery-3.4.1.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="assets/js/patikel/particles.js-master/particles.js"></script>

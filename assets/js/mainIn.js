@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    console.log('ok');
 
     $('.nav-item.nav-link').on('click', function (e) {
         $('.nav-item.nav-link.active').removeClass('active');
@@ -11,16 +12,33 @@ $(document).ready(function () {
     });
 
 
+    var sms = $('.pesan').data('pesan');
+
+    if (sms) {
+        $('.berasil').data('');
+        Swal.fire(
+            'Data Anda ' + sms,
+            'You clicked the button!',
+            'success'
+        )
+    }
 
 
 
+    var mes_rows = $('.mes').data('mes');
     var Num_rows = $('.numrows').data('num_rows');
     var visitorSum = $('.sumV').data('sumvisitor');
     var totalfile = $('.total').data('totalfile');
     // console.log(totalfile);
     // var arrSum = totalfile => totalfile.reduce((a, b) => a + b, 0);
 
+    // console.log(Array(Num_rows));
+    var mes = parseInt(mes_rows);
 
+    var num = parseInt(Num_rows);
+
+    var totalDatabase = mes + num
+    console.log(totalDatabase);
 
     var numbers = totalfile // sums to 100
 
@@ -49,12 +67,12 @@ $(document).ready(function () {
 
         // The data for our dataset
         data: {
-            labels: ['Banyak Data Yang Ada Di Database'],
+            labels: ['Banyak Data tb_music', 'Banyak Data tb_message'],
             datasets: [{
                 label: 'My First dataset',
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
-                data: [Num_rows]
+                data: [Num_rows, mes_rows]
             }]
         },
 
@@ -103,12 +121,12 @@ $(document).ready(function () {
 
         // The data for our dataset
         data: {
-            labels: ['Database', 'View', 'Total SizeFile(Mb)'],
+            labels: ['Database Total Data', 'View', 'Total SizeFile(Mb)'],
             datasets: [{
                 label: 'My First dataset',
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
-                data: [Num_rows, visitorSum, mb]
+                data: [totalDatabase, visitorSum, mb]
             }]
         },
 

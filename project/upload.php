@@ -43,7 +43,7 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="<?= baseUrl;   ?>  ">Audio Collection</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -62,7 +62,7 @@ if (isset($_POST["submit"])) {
 
     <div class="container">
 
-        <form action="" method="post" enctype="multipart/form-data">
+        <!-- <form action="" method="post" enctype="multipart/form-data">
             <label for="judul">judul</label>
             <input type="text" name="judul" id="judul">
 
@@ -80,6 +80,41 @@ if (isset($_POST["submit"])) {
 
 
             <button type="submit" name="submit">Tambah</button>
+        </form> -->
+
+
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="judul">Judul</label>
+                <input type="text" name="judul" class="form-control" id="judul" placeholder="Masukan Judul Lagu">
+            </div>
+            <div class="form-group">
+                <label for="artis">Artis</label>
+                <input type="text" name="artis" class="form-control" id="artis" placeholder="Masukan Nama Artis">
+            </div>
+
+
+            <div class="form-group">
+                <label for="deskripsi">Deskripsi</label>
+                <textarea class="form-control" name="deskripsi" id="deskripsi" rows="3"></textarea>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="thumbnail">Thumbnail file input</label>
+                        <input type="file" name="thumbnail" class="form-control-file" id="thumbnail">
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="music">Music file input</label>
+                        <input type="file" name="music" class="form-control-file" id="music">
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit" name="submit">Upload Data</button>
         </form>
 
 

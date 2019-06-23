@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+    $('.nav-item.nav-link').on('click', function (e) {
+        $('.nav-item.nav-link.active').removeClass('active');
+        $(this).addClass('active');
+    })
+
 
     $('.carousel').carousel({
         interval: 500

@@ -9,7 +9,7 @@ session_start();
 
 // pagnation
 //CONFIG
-$jmlDataPerHalaman = 15;
+$jmlDataPerHalaman = 12;
 // $result = mysqli_query($con, "SELECT * FROM tb_music");
 $jumlahData = count(query('SELECT * FROM tb_music'));
 // var_dump($jumlahData);
@@ -71,14 +71,14 @@ if (isset($_POST["cari"])) {
     </nav>
 
 
-    <div class="container collection">
+    <div class="container">
         <div class="row">
-            <div class="col-md-2 Pkartu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum odio mollitia quae necessitatibus explicabo tempore ipsum laudantium dolorem nostrum, praesentium nobis accusantium fuga! Hic quod iste quo iure. Saepe, libero?
+            <!-- <div class="col-md-2 Pkartu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum odio mollitia quae necessitatibus explicabo tempore ipsum laudantium dolorem nostrum, praesentium nobis accusantium fuga! Hic quod iste quo iure. Saepe, libero?
 
-            </div>
-            <div class="col-lg-10 kartu">
-                <div class="box sort">
-                    <form action="" method="post">
+            </div> -->
+            <div class="col-lg atur">
+                <div class="box sort cari">
+                    <form action="" method="post" class="cari">
                         <div class="input-group mt-1">
                             <input type="text" name="keyword" class="form-control" placeholder="Masukan Pencarian Music anda?" aria-label="Recipient's username" aria-describedby="button-addon2" id="keyword">
                             <div class="input-group-append">
@@ -89,29 +89,40 @@ if (isset($_POST["cari"])) {
 
                 </div>
 
-                <?php foreach ($music as $lagu) : ?>
+                <div class="row tampilan">
+                    <?php foreach ($music as $lagu) : ?>
 
 
+                        <div class="col-lg-3 kartu">
+                            <div class="card box a">
+                                <div class="aksi">
+                                    <a class="tbn-ubah" href="update.php?id=<?= $lagu['id'];   ?>&thumb=<?= $lagu['thumbnail']; ?>&lagu=<?= $lagu['music'];   ?>        ">Ubah</a>
+                                    <a class="tbn-hapus" href="delete.php?id=<?= $lagu["id"]; ?>&music=<?= $lagu['music'];   ?>&img=<?= $lagu['thumbnail'];   ?>    ">hapus</a>
+                                </div>
 
-                    <div class="card box a">
-                        <div class="aksi">
-                            <a class="tbn-ubah" href="update.php?id=<?= $lagu['id'];   ?>&thumb=<?= $lagu['thumbnail']; ?>&lagu=<?= $lagu['music'];   ?>        ">Ubah</a>
-                            <a class="tbn-hapus" href="delete.php?id=<?= $lagu["id"]; ?>&music=<?= $lagu['music'];   ?>&img=<?= $lagu['thumbnail'];   ?>    ">hapus</a>
-                        </div>
+                                <img src="<?= baseUrl;   ?>assets/img/<?= $lagu['thumbnail'];   ?>      " class="card-img-top imgLagu" alt="...">
+                                <div class="card-body">
+                                    <a href="<?= baseUrl;   ?>project/play.php?id=<?= $lagu['id'];   ?>  "><?= $lagu['judul'];   ?> </a>
+                                    <p><?= $lagu['deskripsi'];   ?> </p>
+                                    <div class="row content">
+                                        <div class="col artis"><?= $lagu['artis'];   ?> </div>
 
-                        <img src="<?= baseUrl;   ?>assets/img/<?= $lagu['thumbnail'];   ?>      " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <a href="<?= baseUrl;   ?>project/play.php?id=<?= $lagu['id'];   ?>  "><?= $lagu['judul'];   ?> </a>
-                            <p><?= $lagu['deskripsi'];   ?> </p>
-                            <div class="row content">
-                                <div class="col artis"><?= $lagu['artis'];   ?> </div>
+                                        <div class="col views"><?= $lagu['visitor'];   ?></div>
 
-                                <div class="col views"><?= $lagu['visitor'];   ?></div>
-
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach ?>
+
+
+
+
+
+                    <?php endforeach ?>
+                </div>
+
+
+
                 <!-- navigasi -->
 
                 <div class="box sort ilang">

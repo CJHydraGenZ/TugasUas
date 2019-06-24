@@ -160,3 +160,72 @@ Circle.prototype.draw = function () {
     ctx.fill();
     ctx.restore();
 }
+
+
+$('#ajax').submit(function (e) {
+    e.preventDefault();
+    // console.log('okKKK');
+    var url = 'http://localhost/TugasUas/';
+    var pesan = $('#pesan').val();
+    var kesan = $('#kesan').val();
+
+    $.ajax({
+        url: url + 'project/message.php',
+        type: 'post',
+        data: {
+            pesan,
+            kesan,
+        },
+        success: function (data, status) {
+            if (data) {
+                $('#pesan').val('');
+                $('#kesan').val('');
+                Swal.fire(
+                    'Data Anda Berhasil',
+                    'You clicked the button!',
+                    'success'
+                )
+            } else {
+                Swal.fire(
+                    'Data Anda Gagal',
+                    'You clicked the button!',
+                    'error'
+                )
+                alert('kayaknya ada error');
+            }
+
+        }
+    })
+
+})
+
+var totalviews = $('.totalviews').data('totalview');
+var views = $('.views').data('views');
+
+console.log(totalviews);
+console.log(views);
+
+
+var ctx = document.getElementById('grap').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'doughnut',
+
+    // The data for our dataset
+    data: {
+        labels: ['Total Views Semua Music', 'Views Music Ini'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 26, 255)'],
+
+            borderColor: 'rgb(233, 236, 239)',
+            data: [totalviews, views]
+        }]
+    },
+
+
+});
+
+var paralax = document.querySelectorAll('.parallax');
+
+M.Parallax.init(paralax);

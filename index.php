@@ -150,8 +150,12 @@ foreach ($result as $getGambar) {;
 
         <footer class="isi">
             <div class="row footer">
-                <div class="col">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste ut sit quaerat praesentium, nisi soluta earum ad saepe autem. Quos atque ad quae error illo magni doloremque rerum consequatur debitis.
+                <div class="col iconShare">
+                    <h1>Share Ke Media Sosial Anda</h1>
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.whatsapp.com"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
                 </div>
                 <div class="col ukuran">
                     <!-- <form id="ajax" action="" method="post">

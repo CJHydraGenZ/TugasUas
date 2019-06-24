@@ -8,9 +8,9 @@ body {
 
 .aktip {
     margin-left: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     border-radius: 4px;
-    color: black;
+    color: rgb(138, 0, 0);
 }
 
 .play {
@@ -341,6 +341,36 @@ footer {
 
 
     } */
+
+    .iconShare {
+        text-align: center;
+    }
+
+    .iconShare a {
+        text-decoration: none;
+        margin: 0 20px;
+    }
+
+    .iconShare h1 {
+        margin-top: 10px;
+        margin-bottom: 80px;
+    }
+
+    .iconShare .fa-instagram {
+        color: rgb(255, 230, 0);
+    }
+
+    .iconShare .fa-facebook-f {
+        color: blue;
+    }
+
+    .iconShare .fa-whatsapp {
+        color: rgb(2, 219, 2);
+    }
+
+    .iconShare .fa-twitter {
+        color: rgb(101, 101, 255);
+    }
 }
 
 /* tablet */

@@ -1,15 +1,17 @@
 $(document).ready(function () {
 
 
-    $('.nav-item.nav-link').on('click', function () {
-        $('.nav-item.nav-link.active').removeClass('active');
-        $(this).addClass('active');
+  
 
-    })
+    // var nav = document.querySelectorAll('.nav-item.nav-link');
+    // $('.nav-item.nav-link').on('click', function (e) {
+
+    //     $('.nav-item.nav-link').find('a.active').removeClass('active');
 
 
+    // })
 
-
+    // console.log(nav);
 
 
 

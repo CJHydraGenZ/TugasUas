@@ -62,25 +62,6 @@ if (isset($_POST["submit"])) {
 
     <div class="container">
 
-        <!-- <form action="" method="post" enctype="multipart/form-data">
-            <label for="judul">judul</label>
-            <input type="text" name="judul" id="judul">
-
-            <label for="artis">artis</label>
-            <input type="text" name="artis" id="artis">
-
-            <label for="deskripsi">deskripsi</label>
-            <input type="text" name="deskripsi" id="deskripsi">
-
-            <label for="thumbnail">thumbnail</label>
-            <input type="file" name="thumbnail" id="thumbnail">
-
-            <label for="music">music</label>
-            <input type="file" name="music" id="music">
-
-
-            <button type="submit" name="submit">Tambah</button>
-        </form> -->
 
 
         <form action="" method="post" enctype="multipart/form-data">

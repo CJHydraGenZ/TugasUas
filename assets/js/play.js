@@ -1,4 +1,16 @@
 var btn = document.getElementById('btn');
+
+btn.addEventListener('click', () => {
+    Swal.fire({
+        position: 'top-start',
+        type: 'success',
+        title: 'Memutar Music',
+        showConfirmButton: false,
+        timer: 1500
+    })
+})
+
+
 var btnStop = document.getElementById('btnStop');
 // var durationE = document.getElementById('duration');
 
@@ -202,8 +214,8 @@ $('#ajax').submit(function (e) {
 var totalviews = $('.totalviews').data('totalview');
 var views = $('.views').data('views');
 
-console.log(totalviews);
-console.log(views);
+// console.log(totalviews);
+// console.log(views);
 
 
 var ctx = document.getElementById('grap').getContext('2d');

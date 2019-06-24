@@ -89,7 +89,7 @@ if (isset($_POST["submit"])) {
 
             <div class="form-group">
                 <label for="deskripsi">Deskripsi</label>
-                <textarea class="form-control" name="deskripsi" id="deskripsi" rows="3" value="<?= $msc['deskripsi'];   ?>  "></textarea>
+                <textarea class="form-control" name="deskripsi" id="deskripsi" rows="3" value="<?= $msc['deskripsi'];   ?>  "><?= $msc['deskripsi'];   ?></textarea>
             </div>
             <div class="row">
                 <div class="col">

@@ -102,7 +102,7 @@ if (isset($_POST["cari"])) {
 
                                 <img src="<?= baseUrl;   ?>assets/img/<?= $lagu['thumbnail'];   ?>      " class="card-img-top imgLagu" alt="...">
                                 <div class="card-body">
-                                    <a href="<?= baseUrl;   ?>project/play.php?id=<?= $lagu['id'];   ?>  "><?= $lagu['judul'];   ?> </a>
+                                    <a class="play" href="<?= baseUrl;   ?>project/play.php?id=<?= $lagu['id'];   ?>  "><?= $lagu['judul'];   ?> </a>
                                     <p><?= $lagu['deskripsi'];   ?> </p>
                                     <div class="row content">
                                         <div class="col artis"><?= $lagu['artis'];   ?> </div>

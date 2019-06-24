@@ -122,18 +122,21 @@ foreach ($result as $getGambar) {;
             <div class="col-lg mt-3"><canvas class="char1" id="grapik3"></canvas></div>
         </div>
     </div>
-    <h1 class="text-center">Collection</h1>
+    <h1 class="text-center">Service</h1>
     <div class="iconT">
         <div class="row text-center">
 
             <div class="col-4">
                 <i class="fas fa-play-circle"></i>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat accusamus cum, error mollitia nisi sunt ducimus velit! Magni consequatur eligendi inventore architecto ab voluptas voluptate nesciunt tempore consequuntur explicabo. Nisi!</p>
             </div>
             <div class="col-4">
                 <i class="fas fa-database"></i>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat accusamus cum, error mollitia nisi sunt ducimus velit! Magni consequatur eligendi inventore architecto ab voluptas voluptate nesciunt tempore consequuntur explicabo. Nisi!</p>
             </div>
             <div class="col-4">
-                <i class="fab fa-github"></i>
+                <i class="fas fa-server"></i>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat accusamus cum, error mollitia nisi sunt ducimus velit! Magni consequatur eligendi inventore architecto ab voluptas voluptate nesciunt tempore consequuntur explicabo. Nisi!</p>
             </div>
         </div>
     </div>

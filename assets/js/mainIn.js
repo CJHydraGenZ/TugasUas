@@ -84,7 +84,7 @@ $(document).ready(function () {
         data: {
             labels: ['Rata-rata di Putar'],
             datasets: [{
-                label: 'Rata-Rata di Putar',
+                label: 'Total Lagu di Putar',
                 backgroundColor: 'rgb(255, 99, 132)',
 
                 borderColor: 'rgb(255, 99, 132)',

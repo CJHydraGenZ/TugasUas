@@ -13,7 +13,16 @@ body {
     color: black;
 }
 
+.play {
+    text-decoration: none !important;
+    color: rgb(247, 157, 55);
+    transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
 
+.play:hover {
+    color: red;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+}
 
 .tombol {
     position: relative;
@@ -194,6 +203,8 @@ footer {
 
 }
 
+
+
 /* dekstop */
 @media (min-width: 992px) {
     .navbar {
@@ -281,7 +292,8 @@ footer {
 
     .fas,
     .fab {
-        font-size: 100px;
+        margin-top: 10px;
+        font-size: 60px;
     }
 
     /* #pesan,

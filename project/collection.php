@@ -96,8 +96,8 @@ if (isset($_POST["cari"])) {
                         <div class="col-lg-3 kartu">
                             <div class="card box a">
                                 <div class="aksi">
-                                    <a class="tbn-ubah" href="update.php?id=<?= $lagu['id'];   ?>&thumb=<?= $lagu['thumbnail']; ?>&lagu=<?= $lagu['music'];   ?>        ">Ubah</a>
-                                    <a class="tbn-hapus" href="delete.php?id=<?= $lagu["id"]; ?>&music=<?= $lagu['music'];   ?>&img=<?= $lagu['thumbnail'];   ?>    ">hapus</a>
+                                    <a class="tbn-ubah btn btn-outline-success tombolAksi" href="update.php?id=<?= $lagu['id'];   ?>&thumb=<?= $lagu['thumbnail']; ?>&lagu=<?= $lagu['music'];   ?>        ">Ubah</a>
+                                    <a class="tbn-hapus btn btn-outline-danger tombolAksi" href="delete.php?id=<?= $lagu["id"]; ?>&music=<?= $lagu['music'];   ?>&img=<?= $lagu['thumbnail'];   ?>    ">hapus</a>
                                 </div>
 
                                 <img src="<?= baseUrl;   ?>assets/img/<?= $lagu['thumbnail'];   ?>      " class="card-img-top imgLagu" alt="...">

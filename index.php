@@ -61,7 +61,7 @@ foreach ($result as $getGambar) {;
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/mainIndex.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
-    <title>Hello, world!</title>
+    <title>Home</title>
 </head>
 
 <body>
@@ -105,7 +105,7 @@ foreach ($result as $getGambar) {;
     <div class="about text-center">
         <h1>About</h1>
         <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio, dignissimos magnam quam iste repudiandae nulla quidem nostrum eius iure atque. Accusantium sint quos quibusdam placeat explicabo illum sapiente dolorum hic.
+            Aplikasi ini di buat untuk tugas uas jadi masih banyak bug yang ada pada aplikasi ini fitur yang ada antara lain CRUD, ajax POST data,Play music dan menampilkan Statistik Datanya
         </p>
 
     </div>
@@ -128,15 +128,15 @@ foreach ($result as $getGambar) {;
 
             <div class="col-4">
                 <i class="fas fa-play-circle"></i>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat accusamus cum, error mollitia nisi sunt ducimus velit! Magni consequatur eligendi inventore architecto ab voluptas voluptate nesciunt tempore consequuntur explicabo. Nisi!</p>
+                <p>Play music <br>Memutar music yang di click pada judulnya yang berdasarkan ID dan menampilkan audio visual dalam memutar lagunya serta menampilkan thumbnail judul,nama,deskripsi </p>
             </div>
             <div class="col-4">
                 <i class="fas fa-database"></i>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat accusamus cum, error mollitia nisi sunt ducimus velit! Magni consequatur eligendi inventore architecto ab voluptas voluptate nesciunt tempore consequuntur explicabo. Nisi!</p>
+                <p>DataBase <br>database yang di gunakan adalah mysql dengan nama database db_music dan tb_music,tb_message </p>
             </div>
             <div class="col-4">
                 <i class="fas fa-server"></i>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat accusamus cum, error mollitia nisi sunt ducimus velit! Magni consequatur eligendi inventore architecto ab voluptas voluptate nesciunt tempore consequuntur explicabo. Nisi!</p>
+                <p>Statistik <br>menampilkan data sesuai data statistik dalam database dan totalnya</p>
             </div>
         </div>
     </div>

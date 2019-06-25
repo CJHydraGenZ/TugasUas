@@ -35,7 +35,7 @@ $SUM = query("SELECT SUM(visitor) FROM tb_music WHERE id")[0];
 
     <link rel="stylesheet" href="<?= baseUrl;   ?>assets/css/main.css">
 
-    <title>Hello, world!</title>
+    <title>Play</title>
 </head>
 
 <body id="body">

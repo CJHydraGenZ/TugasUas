@@ -51,7 +51,7 @@ if (isset($_POST["cari"])) {
     <link rel="stylesheet" href="<?= baseUrl;   ?>assets/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
 
-    <title>Hello, world!</title>
+    <title>Collection</title>
 </head>
 
 <body>
